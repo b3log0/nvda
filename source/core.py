@@ -206,10 +206,7 @@ This initializes all modules such as audio, IAccessible, keyboard, mouse, and GU
 	log.debug("loading config")
 	import config
 	config.initialize()
-	if (
-		globalVars.appArgs.copyPortableConfig 
-		and gglobalVars.appArgs.configPath == config.getUserDefaultConfigPath(useInstalledPathIfExists=True)
-	):
+	if globalVars.appArgs.configPath == config.getUserDefaultConfigPath(useInstalledPathIfExists=True):
 		# Make sure not to offer the ability to copy the current configuration to the user account.
 		# This case always applies to the launcher when configPath is not overridden by the user, which is the default.
 		# However, if a user wants to run the launcher with a custom configPath,
